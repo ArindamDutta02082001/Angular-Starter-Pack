@@ -1,0 +1,23 @@
+<h1>LifeCycle functions</h1>
+
+<!-- contructor -->
+<!-- <app-constructor [data]="dataValue"></app-constructor> -->
+
+<!-- ngOnChange -->
+<p>on-change works!</p>
+Enter data and hit button to see onChange :<input
+  type="text"
+  id="item-input"
+  #newItem
+/>
+<button type="button" (click)="addNewItem(newItem.value)">Add to parent</button>
+<!-- <app-on-change [data]="onChangeVariable"></app-on-change> -->
+
+<!-- ngOnInIt -->
+<!-- <app-on-init [data]="onChangeVariable"></app-on-init> -->
+
+<!-- ngDoChange -->
+<app-ng-do-check></app-ng-do-check>
+
+<!-- ngAfterContentInit -->
+<app-ng-aftercontentinit></app-ng-aftercontentinit>

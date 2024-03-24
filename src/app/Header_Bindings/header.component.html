@@ -1,0 +1,26 @@
+
+<h1>Bindings and Interpolation</h1>
+<!-- Bindings -->
+
+<!-- 2 way data binding -->
+2 way binding : <input type="text" [(ngModel)]="inputValue" />
+
+<!-- 
+    alternate way of ngModel
+    <input type="text" (input)="inputValues($event)" [value]="inputValue" /> 
+-->
+
+<!-- 
+
+1 way data binding 
+a. interpolation
+b. property binding 
+c. event binding
+
+-->
+
+<p>interpolation : {{ inputValue }}</p>
+
+<input [disabled]="isDisable" value="property binding" />
+
+<p (click)="showValue($event)">Event Binding (click here): This is My name</p>

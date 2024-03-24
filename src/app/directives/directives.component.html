@@ -1,0 +1,27 @@
+<h1>Directives</h1>
+
+<h3>Structural Directives</h3>
+
+<!-- ngIf directive -->
+<div *ngIf="showContent">Content shown using ngIf directive.</div>
+
+<!-- if else  -->
+<div *ngIf="notShowContent; else elseBlock">
+  Content when condition is true.
+</div>
+
+<ng-template #elseBlock> Content when condition is false. </ng-template>
+
+<!-- ngFor directive -->
+<ul>
+  <li *ngFor="let item of items; let i = index">{{ i }}: {{ item }}</li>
+</ul>
+
+<!-- ngSwitch directive -->
+<div [ngSwitch]="value">
+  <p *ngSwitchCase="'A'">Value is A</p>
+  <p *ngSwitchCase="'B'">Value is B</p>
+  <p *ngSwitchDefault>Value is neither A nor B</p>
+</div>
+
+<h3>Custom Directive</h3>
