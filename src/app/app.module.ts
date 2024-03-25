@@ -18,6 +18,8 @@ import { OnInitComponent } from './lifecycle-hooks/on-init/on-init.component';
 import { NgDoCheckComponent } from './lifecycle-hooks/ng-do-check/ng-do-check.component';
 import { NgAftercontentinitComponent } from './lifecycle-hooks/ng-aftercontentinit/ng-aftercontentinit.component';
 import { BabyComponentComponent } from './lifecycle-hooks/ng-aftercontentinit/baby-component/baby-component.component';
+import { NgAfterviewinitComponent } from './lifecycle-hooks/ng-afterviewinit/ng-afterviewinit.component';
+import { BabyComponentViewComponent } from './lifecycle-hooks/ng-afterviewinit/baby-component-view/baby-component-view.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +35,8 @@ import { BabyComponentComponent } from './lifecycle-hooks/ng-aftercontentinit/ba
     NgDoCheckComponent,
     NgAftercontentinitComponent,
     BabyComponentComponent,
+    NgAfterviewinitComponent,
+    BabyComponentViewComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [provideClientHydration()],

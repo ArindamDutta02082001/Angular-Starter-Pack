@@ -1,14 +1,5 @@
-
 <h1>Bindings and Interpolation</h1>
 <!-- Bindings -->
-
-<!-- 2 way data binding -->
-2 way binding : <input type="text" [(ngModel)]="inputValue" />
-
-<!-- 
-    alternate way of ngModel
-    <input type="text" (input)="inputValues($event)" [value]="inputValue" /> 
--->
 
 <!-- 
 
@@ -21,6 +12,15 @@ c. event binding
 
 <p>interpolation : {{ inputValue }}</p>
 
-<input [disabled]="isDisable" value="property binding" />
+<input [disabled]="isDisable" value="property binding ( button is disabled )" />
 
 <p (click)="showValue($event)">Event Binding (click here): This is My name</p>
+
+<!-- 2 way data binding -->
+2 way binding : <input type="text" [(ngModel)]="inputValue" />
+<span> {{ inputValue }}</span>
+
+<!-- 
+    alternate way of ngModel
+    <input type="text" (input)="inputValues($event)" [value]="inputValue" /> 
+-->

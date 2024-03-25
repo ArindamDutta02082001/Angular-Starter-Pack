@@ -13,4 +13,6 @@ export class DataPassingComponent {
   addNewItem(value: string) {
     this.newItemEvent.emit(value);
   }
+
+  
 }

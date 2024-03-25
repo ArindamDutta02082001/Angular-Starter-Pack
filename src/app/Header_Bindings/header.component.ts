@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponent {
   inputValue: String = 'Initial value from ts file';
-  isDisable: Boolean = false;
+  isDisable: Boolean = true;
   constructor() {}
 
   /////////// alternate way of ngModel //////////////
