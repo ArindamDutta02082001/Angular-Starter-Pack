@@ -1,0 +1,273 @@
+<div id="main">
+  <h1>Template form</h1>
+
+  <form #myForm="ngForm" (ngSubmit)="onSubmit(myForm)">
+    <!--------------------------------------- textbox---------------------------- -->
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input
+        type="text"
+        class="form-control"
+        id="name"
+        name="name"
+        ngModel
+        required
+      />
+      <div
+        *ngIf="
+          myForm.controls['name']?.invalid &&
+          (myForm.controls['name'].dirty || myForm.controls['name'].touched)
+        "
+      >
+        <div *ngIf="myForm.controls['name'].errors?.['required']">
+          Name is required.
+        </div>
+      </div>
+    </div>
+
+    <!--------------------------------------- email ---------------------------- -->
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input
+        type="email"
+        class="form-control"
+        id="email"
+        name="email"
+        ngModel
+        required
+        email
+      />
+      <div
+        *ngIf="
+          myForm.controls['email']?.invalid &&
+          (myForm.controls['email'].dirty || myForm.controls['email'].touched)
+        "
+      >
+        <div *ngIf="myForm.controls['email'].errors?.['required']">
+          Email is required.
+        </div>
+        <div *ngIf="myForm.controls['email'].errors?.['email']">
+          Invalid email format.
+        </div>
+      </div>
+    </div>
+
+    <!--------------------------------------- password ---------------------------- -->
+
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input
+        type="password"
+        class="form-control"
+        id="password"
+        name="password"
+        ngModel
+        required
+        pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$"
+      />
+      <div
+        *ngIf="
+          myForm.controls['password']?.invalid &&
+          (myForm.controls['password'].dirty ||
+            myForm.controls['password'].touched)
+        "
+      >
+        <div *ngIf="myForm.controls['password'].errors?.['required']">
+          Password is required.
+        </div>
+        <div *ngIf="myForm.controls['password'].errors?.['pattern']">
+          Password must be at least 8 characters long and contain at least one
+          number, one lowercase letter, and one uppercase letter.
+        </div>
+      </div>
+    </div>
+
+    <!--------------------------------------- color ---------------------------- -->
+
+    <div class="form-group">
+      <label for="color">Favorite Color</label>
+      <input
+        type="color"
+        class="form-control"
+        id="color"
+        name="color"
+        ngModel
+      />
+    </div>
+
+    <!--------------------------------------- date ---------------------------- -->
+
+    <div class="form-group">
+      <label for="dob">Date of Birth</label>
+      <input type="date" class="form-control" id="dob" name="dob" ngModel />
+    </div>
+
+    <!--------------------------------------- number ---------------------------- -->
+
+    <div class="form-group">
+      <label for="age">Age</label>
+      <input
+        type="number"
+        class="form-control"
+        id="age"
+        name="age"
+        ngModel
+        min="18"
+        max="100"
+      />
+      <div
+        *ngIf="
+          myForm.controls['age']?.invalid &&
+          (myForm.controls['age'].dirty || myForm.controls['age'].touched)
+        "
+      >
+        <div
+          *ngIf="myForm.controls['age'].errors?.['min'] || myForm.controls['age'].errors?.['max']"
+        >
+          Age must be between 18 and 100.
+        </div>
+      </div>
+    </div>
+
+    <!--------------------------------------- range ---------------------------- -->
+
+    <div class="form-group">
+      <label for="range">Range</label>
+      <input
+        type="range"
+        class="form-control-range"
+        id="range"
+        name="range"
+        [(ngModel)]="rangeupdate"
+        required
+        min="0"
+        max="10"
+      />
+    </div>
+    {{rangeupdate}}
+    <!-- ------------------------------------ selection ------------------------- -->
+
+    <div class="form-group">
+      <label for="state">State *</label>
+      <select class="form-control" id="state" name="state" required ngModel>
+        <option value="">Select State</option>
+        <option value="India">India</option>
+        <option value="Non India"> Non India </option>
+      </select>
+    </div>
+
+    <!--------------------------------------- radio  ---------------------------- -->
+
+    <div class="form-group">
+      <label>Gender</label><br />
+      <div class="form-check form-check-inline">
+        <input
+          class="form-check-input"
+          type="radio"
+          id="male"
+          name="gender"
+          value="male"
+          ngModel
+          required
+        />
+        <label class="form-check-label" for="male">Male</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input
+          class="form-check-input"
+          type="radio"
+          id="female"
+          name="gender"
+          value="female"
+          ngModel
+          required
+        />
+        <label class="form-check-label" for="female">Female</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input
+          class="form-check-input"
+          type="radio"
+          id="other"
+          name="gender"
+          value="other"
+          ngModel
+          required
+        />
+        <label class="form-check-label" for="other">Other</label>
+      </div>
+      <div *ngIf="myForm.controls['gender']?.touched">Gender selected !!!.</div>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+
+  <hr />
+  <!-- ************************************************************************************************** -->
+
+  <h1>Custom FormGroup - grouping of formcontrols</h1>
+    <div *ngIf="addressForm.invalid && addressForm.touched ">
+          * some address field are empty.
+    </div>
+  <form #addressForm="ngForm" (ngSubmit)="onSubmit2(addressForm)">
+    <div ngModelGroup="address">
+      <div class="form-group">
+        <label for="city">City *</label>
+        <input
+          type="text"
+          class="form-control"
+          id="city"
+          name="city"
+          required
+          ngModel
+        />
+      </div>
+      <div class="form-group">
+        <label for="pincode">Pincode *</label>
+        <input
+          type="text"
+          class="form-control"
+          id="pincode"
+          name="pincode"
+          required
+          pattern="\d{6}"
+          ngModel
+        />
+      </div>
+      <div class="form-group">
+        <label for="locality">Locality *</label>
+        <input
+          type="text"
+          class="form-control"
+          id="locality"
+          name="locality"
+          required
+          ngModel
+        />
+      </div>
+      <div class="form-group">
+        <label for="landmark">Landmark</label>
+        <input
+          type="text"
+          class="form-control"
+          id="landmark"
+          name="landmark"
+          ngModel
+        />
+      </div>
+      <div class="form-group">
+        <label for="state">State *</label>
+        <input
+          type="text"
+          class="form-control"
+          id="state"
+          name="state"
+          required
+          ngModel
+        />
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+
+  </form>
+</div>

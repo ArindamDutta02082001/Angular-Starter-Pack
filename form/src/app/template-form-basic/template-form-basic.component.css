@@ -1,0 +1,56 @@
+/* CSS for form */
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-control {
+  width: 98%;
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+}
+
+.form-check {
+  display: inline-block;
+  margin-right: 15px;
+}
+
+.form-check-label {
+  margin-left: 5px;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background-color: #0056b3;
+}
+
+/* CSS for form validation messages */
+
+.error-message {
+  color: #dc3545;
+  font-size: 14px;
+}
+
+/* CSS for form input validation */
+
+.ng-valid {
+  border-color: #28a745; /* green */
+}
+
+.ng-invalid {
+  border-color: #dc3545; /* red */
+}
+
+.main {
+  width: 80vw;
+}
