@@ -42,10 +42,21 @@
 <hr />
 
 <!-- Data passing between parent and child -->
+<h1>Data Passing between Parent & Child and vice versa</h1>
+
+<!-- @ViewChild -->
+Passing parent data to child by ViewChild : <input
+  type="text"
+  #newItem
+/>
+<button type="button" (click)="addNames()">Add Name</button>
+
+<!-- @Input and @Output -->
 <app-data-passing
   [data]="compData"
   [personObj]="person"
   (newItemEvent)="addItem($event)"
+  #child
 ></app-data-passing>
 <span>
   <b> {{ childData }}</b>

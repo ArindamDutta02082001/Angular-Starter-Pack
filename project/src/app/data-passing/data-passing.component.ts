@@ -5,6 +5,9 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
   templateUrl: './data-passing.component.html',
 })
 export class DataPassingComponent {
+  
+  // using @Input() decorator
+
   @Input() data: string = '';
   @Input() personObj!: any[];
 
@@ -14,5 +17,13 @@ export class DataPassingComponent {
     this.newItemEvent.emit(value);
   }
 
-  
+  // using @ViewChild()
+
+  varChild: string = 'Arindam';
+
+  nameList: string[]= [];
+
+  updateList(data: string) {
+    this.nameList.push(data);
+  }
 }

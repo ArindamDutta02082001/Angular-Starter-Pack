@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
+import { DataPassingComponent } from './data-passing/data-passing.component';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -7,7 +8,7 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'project';
 
-  // @Input decorators parameters
+  // using @Input decorators code
   compData: string = 'Hi from parent component data';
   person: Object[] = [
     {
@@ -16,10 +17,18 @@ export class AppComponent {
     },
   ];
 
+  // using @ViewChild code
+  @ViewChild('child') childref!: DataPassingComponent;
+  @ViewChild('newItem') newItem !: ElementRef ;
+  
+  addNames() {
+    console.log(this.childref.data);
+    this.childref.updateList(this.newItem.nativeElement?.value);
+  }
+
   // @Output decorator function
-  childData : string = "";
-  addItem(data : string)
-  {
+  childData: string = '';
+  addItem(data: string) {
     this.childData = data;
   }
 

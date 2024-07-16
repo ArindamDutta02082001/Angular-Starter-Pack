@@ -1,16 +1,20 @@
-<h1>Data Passing between Parent & Child and vice versa</h1>
 
 <!-- Parent to child -->
+<!-- @ViewChild -->
 <p>
-  This is the parent data from app component : <b>{{ data }}</b> is
+<li *ngFor="let val of nameList">{{val}}</li>
+</p>
+
+<!-- @Input() -->
+<p>
+ Passing parent data to child using Input() : <b>{{ data }}</b> is
   <b>{{ personObj[0].name }}</b>
 </p>
 
 
 <!-- child to parent -->
-Child data enter here to render to Parent :<input
+Child data to Parent :<input
   type="text"
-  id="item-input"
   #newItem
 />
 <button type="button" (click)="addNewItem(newItem.value)">Add to parent</button>
