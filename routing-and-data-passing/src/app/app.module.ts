@@ -8,6 +8,10 @@ import { DashboardTwoComponent } from './pages/dashboard-two/dashboard-two.compo
 import { DashboardThreeComponent } from './pages/dashboard-three/dashboard-three.component';
 import { HeaderComponent } from './common-pages/header/header.component';
 import { FooterComponent } from './common-pages/footer/footer.component';
+import { DashboardFourComponent } from './pages/dashboard-four/dashboard-four.component';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { LayoutComponent } from './layout/layout.component';
+import { HomeComponent } from './pages/home/home.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +20,11 @@ import { FooterComponent } from './common-pages/footer/footer.component';
     DashboardTwoComponent,
     DashboardThreeComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    DashboardFourComponent,
+    NotFoundComponent,
+    LayoutComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

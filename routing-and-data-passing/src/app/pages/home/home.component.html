@@ -1,0 +1,53 @@
+<div class="flex flex-col items-center justify-center h-screen">
+  <div class="flex flex-col items-center w-full space-y-8">
+    <h1 class="text-5xl font-bold mb-8">Choose an Option</h1>
+    <div class="flex justify-center w-full space-x-4">
+      <!-- Dashboard 1 -->
+      <a
+        routerLink="/dash-one/{{ info.name }}/{{ info.age }}"
+        routerLinkActive="active"
+        class="no-underline px-6 py-3 text-lg bg-blue-500 text-white rounded-lg hover:bg-blue-600 focus:outline-none focus:bg-blue-600 text-center"
+      >
+        Dashboard 1
+        <p>passing values directly in path url</p>
+            <div>
+              <code>/dash-one/{{ info.name }}/{{ info.age }}</code>
+            </div>
+      </a>
+
+      <!-- Dashboard 2 -->
+      <a
+        [routerLink]="['/dash-two']"
+        [queryParams]="{ name: info.name, age: info.age }"
+        routerLinkActive="active"
+        class="no-underline px-6 py-3 text-lg font-medium bg-green-500 text-white rounded-lg hover:bg-green-600 focus:outline-none focus:bg-green-600 text-center"
+      >
+        Dashboard 2
+        <p>passing the query parameter  in url</p>
+              <div>
+              <code>/dash-one?name={{ info.name }}&age={{ info.age }}</code>
+            </div>
+      </a>
+
+      <!-- Dashboard 3 -->
+      <a
+        [routerLink]="['/dash-three']"
+        [state]="{ myInfo: info }"
+        routerLinkActive="active"
+        class="no-underline px-6 py-3 text-lg font-medium bg-purple-500 text-white rounded-lg hover:bg-purple-600 focus:outline-none focus:bg-purple-600 text-center"
+      >
+        Dashboard 3
+        <p>Passing data through state</p>
+      </a>
+
+      <!-- Dashboard 4 -->
+      <button
+        (click)="handleDashFour()"
+        class="px-6 py-3 text-lg font-medium bg-orange-500 text-white rounded-lg hover:bg-orange-600 focus:outline-none focus:bg-orange-600 text-center"
+      >
+        Dashboard 4
+        <p>Passing data through useNavigate</p>
+      </button>
+    </div>
+  </div>
+</div>

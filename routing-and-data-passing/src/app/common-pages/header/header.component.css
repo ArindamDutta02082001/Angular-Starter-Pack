@@ -2,6 +2,15 @@ a{
     text-decoration: none;
     margin: 0px 10px;
 }
+
+.active
+{
+
+  font-weight: 100;
+  color: green;
+
+}
+
 h2{
     color: #FF5733;
 }
