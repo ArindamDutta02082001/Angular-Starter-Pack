@@ -12,6 +12,7 @@ import { DashboardFourComponent } from './pages/dashboard-four/dashboard-four.co
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { LayoutComponent } from './layout/layout.component';
 import { HomeComponent } from './pages/home/home.component';
+import { CheckoutComponent } from './protected-pages/checkout/checkout.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { HomeComponent } from './pages/home/home.component';
     DashboardFourComponent,
     NotFoundComponent,
     LayoutComponent,
-    HomeComponent
+    HomeComponent,
+    CheckoutComponent
   ],
   imports: [
     BrowserModule,
@@ -32,6 +34,7 @@ import { HomeComponent } from './pages/home/home.component';
   ],
   providers: [
     provideClientHydration()
+    // services we define here 
   ],
   bootstrap: [AppComponent]
 })

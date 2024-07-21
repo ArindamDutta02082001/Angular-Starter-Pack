@@ -13,8 +13,8 @@ export class DashboardThreeComponent implements OnInit {
   constructor(private router: Router) {}
 
   ngOnInit(): void {
-    const navigation = this.router.getCurrentNavigation();
-    const state = navigation?.extras.state;
+    const state = this.router.getCurrentNavigation()?.extras.state ;
+    console.log(state);
 
     if (state) {
       this.name = state['name'];

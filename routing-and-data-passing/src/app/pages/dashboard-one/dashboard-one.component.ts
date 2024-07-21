@@ -16,6 +16,7 @@ export class DashboardOneComponent implements OnInit {
   constructor(private route: ActivatedRoute) {}
 
   ngOnInit(): void {
+    // ------------------- capturig the path values  ------------------
     this.paramMapsObs = this.route.paramMap.subscribe((params) => {
       this.name = params.get('name');
       this.age = params.get('age');

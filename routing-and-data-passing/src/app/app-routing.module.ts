@@ -6,14 +6,31 @@ import { DashboardThreeComponent } from './pages/dashboard-three/dashboard-three
 import { DashboardFourComponent } from './pages/dashboard-four/dashboard-four.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { HomeComponent } from './pages/home/home.component';
+import { LayoutComponent } from './layout/layout.component';
+
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  // { path: '', redirectTo : "home",component: AppComponent },       redirectTo is used to redirect incoming request to a different path
-  { path: 'dash-one/:name/:age', component: DashboardOneComponent },
-  { path: 'dash-two', component: DashboardTwoComponent },
-  { path: 'dash-three', component: DashboardThreeComponent },
-  { path: 'dash-four/:name/age=:age', component: DashboardFourComponent },
-  // wild-card route path for 404 not found
+  {
+    path: 'dash-one',
+    component: LayoutComponent,
+    children: [{ path: ':name/:age', component: DashboardOneComponent }],
+  },
+  {
+    path: 'dash-two',
+    component: LayoutComponent,
+    children: [{ path: '', component: DashboardTwoComponent }],
+  },
+  {
+    path: 'dash-three',
+    component: LayoutComponent,
+    children: [{ path: '', component: DashboardThreeComponent }],
+  },
+  {
+    path: 'dash-four',
+    component: LayoutComponent,
+    children: [{ path: ':name/age=:age', component: DashboardFourComponent }],
+  },
+
   { path: '**', component: NotFoundComponent },
 ];
 

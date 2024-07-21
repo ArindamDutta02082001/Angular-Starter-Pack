@@ -2,7 +2,7 @@
   <div class="flex flex-col items-center w-full space-y-8">
     <h1 class="text-5xl font-bold mb-8">Choose an Option</h1>
     <div class="flex justify-center w-full space-x-4">
-      <!-- Dashboard 1 -->
+      <!-- Dashboard 1 : passing values directly in path url -->
       <a
         routerLink="/dash-one/{{ info.name }}/{{ info.age }}"
         routerLinkActive="active"
@@ -10,26 +10,27 @@
       >
         Dashboard 1
         <p>passing values directly in path url</p>
-            <div>
-              <code>/dash-one/{{ info.name }}/{{ info.age }}</code>
-            </div>
+        <div>
+          <code>/dash-one/{{ info.name }}/{{ info.age }}</code>
+        </div>
       </a>
 
-      <!-- Dashboard 2 -->
+      <!-- Dashboard 2 : passing the query parameter or fragment  in url -->
       <a
-        [routerLink]="['/dash-two']"
+        routerLink="/dash-two"
         [queryParams]="{ name: info.name, age: info.age }"
+        [fragment]="'fragment-part'"
         routerLinkActive="active"
         class="no-underline px-6 py-3 text-lg font-medium bg-green-500 text-white rounded-lg hover:bg-green-600 focus:outline-none focus:bg-green-600 text-center"
       >
         Dashboard 2
-        <p>passing the query parameter  in url</p>
-              <div>
-              <code>/dash-one?name={{ info.name }}&age={{ info.age }}</code>
-            </div>
+        <p>passing the query parameter in url</p>
+        <div>
+          <code>/dash-one?name={{ info.name }}&age={{ info.age }}</code>
+        </div>
       </a>
 
-      <!-- Dashboard 3 -->
+      <!-- Dashboard 3 : passing states while navigating -->
       <a
         [routerLink]="['/dash-three']"
         [state]="{ myInfo: info }"
@@ -40,7 +41,7 @@
         <p>Passing data through state</p>
       </a>
 
-      <!-- Dashboard 4 -->
+      <!-- Dashboard 4 : passing all the above three in a button click -->
       <button
         (click)="handleDashFour()"
         class="px-6 py-3 text-lg font-medium bg-orange-500 text-white rounded-lg hover:bg-orange-600 focus:outline-none focus:bg-orange-600 text-center"
