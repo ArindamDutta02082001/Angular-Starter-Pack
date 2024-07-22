@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import AuthServiceService from '../../services/login-service/login-service.service';
 
 @Component({
   selector: 'app-home',
@@ -12,15 +13,18 @@ export class HomeComponent {
     age: 30,
   };
 
-  constructor(private router: Router) {}
+  constructor(
+    private router: Router,
+    private authservice: AuthServiceService
+  ) {}
 
   handleDashFour() {
-    // navigate takes the first array with elements , that has to be in the URL
-    // and the second is the state object
+    // navigate takes the first array with elements , that has to be in the URL , and the second is the state object
     this.router.navigate(
-      ['/dash-four', this.info.name, `age=${this.info.age}`],
+      ['/dash-four', this.info.name],
       {
         state: { msg: 'state data passed' },
+        queryParams : { age : this.info.age}
       }
     );
   }

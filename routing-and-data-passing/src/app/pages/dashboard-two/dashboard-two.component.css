@@ -1,0 +1,28 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40vh; /* Full viewport height */
+  background-color: #f0f0f0; /* Light gray background */
+}
+
+.content {
+  max-width: 400px; /* Maximum width of the content */
+  background-color: white; /* White background for the content */
+  border: 1px solid #ccc; /* Gray border */
+  padding: 20px; /* Padding inside the content box */
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for elevation */
+  text-align: center; /* Center the text */
+}
+
+.content h2 {
+  font-size: 24px; /* Font size for the heading */
+  font-weight: bold; /* Bold font weight for the heading */
+  margin-bottom: 16px; /* Margin below the heading */
+}
+
+.content .info {
+  margin-bottom: 16px; /* Margin below each info section */
+  font-size: 16px; /* Font size for the info text */
+}

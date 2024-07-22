@@ -1,5 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import {
+  ActivatedRoute,
+  ActivatedRouteSnapshot,
+  Router,
+} from '@angular/router';
+import { map } from 'rxjs';
 
 @Component({
   selector: 'app-dashboard-three',
@@ -7,18 +12,23 @@ import { Router } from '@angular/router';
   styleUrl: './dashboard-three.component.css',
 })
 export class DashboardThreeComponent implements OnInit {
-  name!: string | null ;
-  age!: number | null ;
+  name!: string | null;
+  age!: number | null;
 
-  constructor(private router: Router) {}
+  constructor(private route: ActivatedRoute) {}
 
   ngOnInit(): void {
-    const state = this.router.getCurrentNavigation()?.extras.state ;
-    console.log(state);
 
-    if (state) {
-      this.name = state['name'];
-      this.age = state['age'];
-    }
+    // const state1 = this.route.paramMap.pipe(map(() => history.state));
+    // state1.subscribe((e) => {
+    //   this.name = e['myInfo'].name;
+    //   this.age = e['myInfo'].age;
+    // });
+
+    // or
+
+    const state = history.state.myInfo;
+    this.name = state.name;
+    this.age = state.age;
   }
 }

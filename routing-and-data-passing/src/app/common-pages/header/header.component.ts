@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import LoginService from '../../services/login-service/login-service.service';
 
 @Component({
   selector: 'app-header',
@@ -7,4 +8,10 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponent {
   val: any = { exact: true };
+
+  constructor(private loginService: LoginService) {}
+
+  logoutUser() {
+    this.loginService.logoutUser();
+  }
 }

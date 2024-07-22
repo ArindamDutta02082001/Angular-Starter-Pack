@@ -1,5 +1,8 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
+import {
+  BrowserModule,
+  provideClientHydration,
+} from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,6 +16,10 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { LayoutComponent } from './layout/layout.component';
 import { HomeComponent } from './pages/home/home.component';
 import { CheckoutComponent } from './protected-pages/checkout/checkout.component';
+import { LoginComponent } from './login/login.component';
+
+import LoginService from './services/login-service/login-service.service';
+import { AuthServiceService } from './services/auth-service/auth-guard-service.service';
 
 @NgModule({
   declarations: [
@@ -26,16 +33,16 @@ import { CheckoutComponent } from './protected-pages/checkout/checkout.component
     NotFoundComponent,
     LayoutComponent,
     HomeComponent,
-    CheckoutComponent
+    CheckoutComponent,
+    LoginComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, AppRoutingModule],
   providers: [
-    provideClientHydration()
-    // services we define here 
+    provideClientHydration(),
+    AuthServiceService,
+    LoginService,
+    // services we define here
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

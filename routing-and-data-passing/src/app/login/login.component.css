@@ -1,0 +1,95 @@
+.login-form-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #f9f9f9;
+}
+
+.page-header-primary {
+  width: 100%;
+  background-color: #007bff;
+  padding: 10px;
+  text-align: center;
+}
+
+.page-header-primary-nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+  margin: 0 10px;
+}
+
+.page-header-primary-nav a:hover {
+  text-decoration: underline;
+}
+
+.login-form {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  position: relative;
+}
+
+.cancel-button-div {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+.cancel-button-div i {
+  font-size: 20px;
+  color: #007bff;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="password"] {
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+}
+
+button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+label input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+label {
+  display: flex;
+  align-items: center;
+}

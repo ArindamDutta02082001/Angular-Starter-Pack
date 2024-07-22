@@ -4,21 +4,21 @@
     <div class="flex justify-center w-full space-x-4">
       <!-- Dashboard 1 : passing values directly in path url -->
       <a
-        routerLink="/dash-one/{{ info.name }}/{{ info.age }}"
+        routerLink="/dash-one/&#123;&#123; info.name &#125;&#125;/&#123;&#123; info.age &#125;&#125;"
         routerLinkActive="active"
         class="no-underline px-6 py-3 text-lg bg-blue-500 text-white rounded-lg hover:bg-blue-600 focus:outline-none focus:bg-blue-600 text-center"
       >
         Dashboard 1
         <p>passing values directly in path url</p>
         <div>
-          <code>/dash-one/{{ info.name }}/{{ info.age }}</code>
+          <code>/dash-one/&#123;&#123; info.name &#125;&#125;/&#123;&#123; info.age &#125;&#125;</code>
         </div>
       </a>
 
       <!-- Dashboard 2 : passing the query parameter or fragment  in url -->
       <a
         routerLink="/dash-two"
-        [queryParams]="{ name: info.name, age: info.age }"
+        [queryParams]="&#123; name: info.name, age: info.age &#125;"
         [fragment]="'fragment-part'"
         routerLinkActive="active"
         class="no-underline px-6 py-3 text-lg font-medium bg-green-500 text-white rounded-lg hover:bg-green-600 focus:outline-none focus:bg-green-600 text-center"
@@ -26,19 +26,22 @@
         Dashboard 2
         <p>passing the query parameter in url</p>
         <div>
-          <code>/dash-one?name={{ info.name }}&age={{ info.age }}</code>
+          <code>/dash-one?name=&#123;&#123; info.name &#125;&#125;&age=&#123;&#123; info.age &#125;&#125;</code>
         </div>
       </a>
 
       <!-- Dashboard 3 : passing states while navigating -->
       <a
         [routerLink]="['/dash-three']"
-        [state]="{ myInfo: info }"
+        [state]="&#123; myInfo: info &#125;"
         routerLinkActive="active"
         class="no-underline px-6 py-3 text-lg font-medium bg-purple-500 text-white rounded-lg hover:bg-purple-600 focus:outline-none focus:bg-purple-600 text-center"
       >
         Dashboard 3
         <p>Passing data through state</p>
+        <div>
+          <code>/dash-three [state]="key : val"</code>
+        </div>
       </a>
 
       <!-- Dashboard 4 : passing all the above three in a button click -->
@@ -48,6 +51,45 @@
       >
         Dashboard 4
         <p>Passing data through useNavigate</p>
+<div>
+<code>
+this.router.navigate(
+  ['/dash-four', this.info.name],
+</code>
+  &#123;
+    state: &#123; msg: 'state data passed' &#125;,
+    queryParams: &#123; age: this.info.age &#125;
+  &#125;
+);
+</div>
+
+
+
+      </button>
+    </div>
+    <div class="flex justify-center w-full space-x-4">
+      <!-- Heading for Protected Route Guard Components -->
+      <h2 class="text-2xl font-bold mb-4">Protected Route Guard Components</h2>
+
+      <!-- Login Button -->
+      <a
+        routerLink="/login"
+        routerLinkActive="active"
+        class="no-underline px-6 py-3 text-lg bg-green-500 text-white rounded-lg hover:bg-green-600 focus:outline-none focus:bg-green-600 text-center"
+      >
+        Login
+        <p>Click here</p>
+      </a>
+
+      <!-- Checkout Button -->
+      <button
+        onclick=""
+        routerLink="/checkout"
+        routerLinkActive="active"
+        class="no-underline px-6 py-3 text-lg bg-purple-500 text-white rounded-lg hover:bg-purple-600 focus:outline-none focus:bg-purple-600 text-center"
+      >
+        Checkout ( Login First )
+        <p>Proceed to checkout page</p>
       </button>
     </div>
   </div>
