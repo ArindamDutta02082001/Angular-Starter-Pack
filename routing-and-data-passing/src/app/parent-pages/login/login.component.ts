@@ -1,6 +1,6 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 import { Router } from '@angular/router';
-import AuthServiceService from '../services/login-service/login-service.service';
+import AuthServiceService from '../../services/login-service/login-service.service';
 import { Observable } from 'rxjs';
 
 @Component({

@@ -5,10 +5,10 @@ import { DashboardTwoComponent } from './pages/dashboard-two/dashboard-two.compo
 import { DashboardThreeComponent } from './pages/dashboard-three/dashboard-three.component';
 import { DashboardFourComponent } from './pages/dashboard-four/dashboard-four.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
-import { HomeComponent } from './pages/home/home.component';
+import { HomeComponent } from './parent-pages/home/home.component';
 import { LayoutComponent } from './layout/layout.component';
-import { LoginComponent } from './login/login.component';
-import { CheckoutComponent } from './protected-pages/checkout/checkout.component';
+import { LoginComponent } from './parent-pages/login/login.component';
+import { CheckoutComponent } from './guard-pages/checkout-protected/checkout.component';
 import { AuthServiceService } from './services/auth-service/auth-guard-service.service';
 
 const routes: Routes = [
@@ -48,6 +48,7 @@ const routes: Routes = [
     // if you use canActivateChild , then you can open the parent /checkout but not the /checkout/path  i.e it protects the child routes only
     // canActivateChild: [AuthServiceService],
   },
+  //
 
   { path: '**', component: NotFoundComponent },
 ];

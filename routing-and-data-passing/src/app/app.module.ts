@@ -14,12 +14,13 @@ import { FooterComponent } from './common-pages/footer/footer.component';
 import { DashboardFourComponent } from './pages/dashboard-four/dashboard-four.component';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { LayoutComponent } from './layout/layout.component';
-import { HomeComponent } from './pages/home/home.component';
-import { CheckoutComponent } from './protected-pages/checkout/checkout.component';
-import { LoginComponent } from './login/login.component';
+import { HomeComponent } from './parent-pages/home/home.component';
+import { CheckoutComponent } from './guard-pages/checkout-protected/checkout.component';
+import { LoginComponent } from './parent-pages/login/login.component';
 
 import LoginService from './services/login-service/login-service.service';
 import { AuthServiceService } from './services/auth-service/auth-guard-service.service';
+import { FormFillComponent } from './guard-pages/form-fill/form-fill.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { AuthServiceService } from './services/auth-service/auth-guard-service.s
     HomeComponent,
     CheckoutComponent,
     LoginComponent,
+    FormFillComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [
